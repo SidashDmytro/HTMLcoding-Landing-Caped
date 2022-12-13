@@ -1,0 +1,347 @@
+desktop = "screen and (min-width: 1180px)"
+
+blackColor = #000
+topIconsSize = 24px
+
+@font-face
+	font-family 'Circular Std', sans-serif
+	font-style normal
+	font-weight 400
+	font-display swap
+	src local('Circular Std'),
+			url('/font/CircularStd-Medium.woff2') format('woff2'),
+			url('/font/CircularStd-Medium.woff') format('woff');
+
+@font-face
+	font-family 'Sofia Pro', sans-serif
+	font-style normal
+	font-weight 400
+	font-display swap
+	src local('Sofia Pro'),
+			url('/font/SofiaProRegularAz.woff2') format('woff2'),
+			url('/font/SofiaProRegularAz.woff') format('woff');
+
+@font-face
+	font-family 'Sofia Pro Bold', sans-serif
+	font-style normal
+	font-weight 700
+	font-display swap
+	src local('Sofia Pro Bold'),
+			url('/font/SofiaProBoldAz.woff2') format('woff2'),
+			url('/font/SofiaProBoldAz.woff') format('woff');
+
+
+html
+	scroll-behavior smooth
+body
+	min-width 320px
+	overflow-x hidden
+	min-height 100vh
+	margin 0
+	font-size 18px
+	font-family 'Sofia Pro', sans-serif
+	font-weight 400
+
+.wrapper
+	margin 15px 10px
+
+a
+	color inherit
+	text-decoration none
+	&:hover,
+	&:focus,
+	&:active
+		text-decoration none
+
+img
+	max-width 100%
+	display block
+
+li
+	list-style none
+
+// Header start
+
+header
+	height 80px
+	display flex
+	flex-direction column
+	margin-bottom 15px
+	.menu
+		display flex
+		justify-content space-between 
+		align-items center
+		height 50%
+		width 100%
+		&__main
+			display flex
+			gap 20px
+			align-items center
+		nav
+			display flex
+			align-items center
+			ul
+				display flex
+				flex-direction row
+				justify-content space-between
+				gap 20px
+				list-style none
+				margin 0
+				li
+					a
+						display block
+						background-size 100% 100%
+						width topIconsSize
+						height topIconsSize
+					&:hover
+						opacity: .75
+	.menu2
+		nav
+			ul
+				display flex
+				justify-content space-around 
+				align-items center
+				height 50%
+				width 100%
+				padding 0
+				li
+					a
+						display block
+						font-family 'Circular Std', sans-serif
+						font-style normal
+						font-weight 400
+						font-size 17px
+						margin-bottom 3px	
+					&:hover,
+					&:focus,
+					&:active
+						opacity .75
+						text-decoration none
+						border-bottom 2px solid blackColor
+	.explore
+		display none
+		position absolute
+		background #fff
+		z-index 10
+		top 0
+		left 0
+		border-radius 3px
+		box-shadow 0px 0px 10px 0px rgba(54,50,50,0.75)
+		-webkit-box-shadow 0px 0px 10px 0px rgba(54,50,50,0.75)
+		-moz-box-shadow 0px 0px 10px 0px rgba(54,50,50,0.75)
+		padding-left 10px
+		padding-top 15px
+		.icon-burger-close
+			width topIconsSize
+			height topIconsSize
+			position relative
+			top 20px
+			left -5px
+			&::before
+				content ''
+				width 34px
+				height 2px
+				background-color blackColor
+				position absolute
+				transform rotate(-45deg)
+			&::after
+				content ''
+				width 34px
+				height 2px
+				background-color blackColor
+				position absolute
+				transform rotate(45deg)
+		h2
+			margin 50px 0 20px 10px
+			font-family: 'Sofia Pro', sans-serif
+			font-style normal
+			font-weight 800
+			font-size 30px
+			color blackColor
+		nav
+			margin-left 10px
+			ul
+				padding-left 0
+				padding-right 40px
+				li
+					a
+						display block
+						font-family 'Sofia Pro', sans-serif
+						font-style normal
+						font-weight 400
+						font-size 16px
+						margin-bottom 20px
+					&:hover,
+					&:focus,
+					&:active
+						opacity .75
+
+.icon-cat-1
+	&::before
+		content '⚡️'
+		margin-right 10px
+.icon-cat-2
+	&::before
+		content '🧥'
+		margin-right 10px		
+.icon-cat-3
+	&::before
+		content '👞'
+		margin-right 10px
+.icon-cat-4
+	&::before
+		content '👜'
+		margin-right 10px		
+.icon-cat-5
+	&::before
+		content '🤸‍♀️'
+		margin-right 10px		
+.icon-cat-6
+	&::before
+		content '🎁'
+		margin-right 10px		
+.icon-cat-7
+	&::before
+		content '💎'
+		margin-right 10px		
+.icon-cat-8
+	&::before
+		content url('img/icon-help.svg') 
+		margin-right 10px
+		width 18px
+		height 18px
+		background-size 100% 100%
+
+.icon-search
+	background url('img/icon-search.svg') no-repeat left top
+
+.icon-basket
+	background: url('img/icon-basket.svg') no-repeat left top
+
+.icon-cabinet
+	background url('img/icon-cabinet.svg') no-repeat left top
+
+
+.icon-burger
+	width topIconsSize
+	height topIconsSize
+	position relative
+	&::after
+		content ''
+		width topIconsSize
+		height 2px
+		background-color blackColor
+		position absolute
+		top 3px
+		left 0
+		box-shadow 0 10px 0 0 blackColor, 0 19px 0 0 blackColor
+
+.logo
+		display block
+		background url('img/logo.svg') no-repeat left top
+		background-size 100% 100%
+		width 85px
+		height 40px
+
+
+// Header end
+
+// Content start
+
+.content
+	display flex
+	flex-direction column
+	gap 10px 0
+	margin-bottom 25px
+	&__posts
+		display flex
+		width 100%
+		justify-content space-between
+		&-item
+			position relative
+			a
+				img
+					width 100%
+					height auto
+					border-radius 10px
+					&:hover
+						opacity .75
+			.heart
+				position absolute
+				display flex
+				justify-content center
+				align-items center
+				background #FFF
+				top 10px
+				right 10px
+				width 38px
+				height 38px
+				border-radius 50%
+				z-index 2
+				&:before
+					content '♡'
+				&:hover
+					&:before
+						content '❤️'
+				&-active
+					&:before
+						content '❤️'
+	.horizontal
+		flex-direction column
+		gap 10px 0
+		img
+			min-width 300px
+			min-height 100px
+	.vertical
+		flex-direction row
+		gap 0 10px
+		img
+			min-width 145px
+			min-height 213px
+
+// Content end
+
+// Footer start
+
+footer
+	display flex
+	justify-content center
+	align-items center
+	font-size 12px
+	p
+		margin 0
+
+// Footer end
+
+// Search form start
+
+form.search-form
+	display none
+	z-index 101
+	top 75px
+	position fixed
+	width 100%
+	left 0
+	input
+		display block
+		padding 15px 15px 15px 40px
+		width 80%
+		margin 0 auto
+		border 0
+		font-size 18px
+		border-radius 3px
+		background #fff url('img/icon-search.svg') no-repeat 10px center
+		background-size 25px 25px
+		box-shadow 0 0 50px rgb(0 0 0 / 50%)
+
+.overlay
+	display none
+	z-index 100
+	top 0
+	position fixed
+	background rgba(255,255,255,.5)
+	height 100%
+	width 100%
+	left 0
+
+// Search form end

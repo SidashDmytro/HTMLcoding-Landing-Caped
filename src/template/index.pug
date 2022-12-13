@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name='description' content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
+		link(rel='stylesheet' href='style.css')
+		title Wigs - Ecommerce Website UI
+	body
+		div.wrapper 
+			include header.pug
+			include content.pug
+			include footer.pug
+		form.search-form(action='/' method='get')
+			input(type='search' name='s' placeholder='Search')
+		div.overlay
+
+		script(src="script.js")
