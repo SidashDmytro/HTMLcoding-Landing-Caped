@@ -1,4 +1,5 @@
-desktop = "screen and (min-width: 1180px)"
+desktop = "screen and (min-width: 1024px)"
+tablet = "screen and (min-width: 768px)"
 
 blackColor = #000
 topIconsSize = 24px
@@ -118,7 +119,43 @@ header
 						opacity .75
 						text-decoration none
 						border-bottom 2px solid blackColor
-	.explore
+
+.icon-search
+	background url('img/icon-search.svg') no-repeat left top
+
+.icon-basket
+	background: url('img/icon-basket.svg') no-repeat left top
+
+.icon-cabinet
+	background url('img/icon-cabinet.svg') no-repeat left top
+
+
+.icon-burger
+	width topIconsSize
+	height topIconsSize
+	position relative
+	&::after
+		content ''
+		width topIconsSize
+		height 2px
+		background-color blackColor
+		position absolute
+		top 3px
+		left 0
+		box-shadow 0 10px 0 0 blackColor, 0 19px 0 0 blackColor
+
+.logo
+		display block
+		background url('img/logo.svg') no-repeat left top
+		background-size 100% 100%
+		width 85px
+		height 40px
+
+// Header end
+
+// Category start
+
+.explore
 		display none
 		position absolute
 		background #fff
@@ -163,18 +200,17 @@ header
 			ul
 				padding-left 0
 				padding-right 40px
-				li
-					a
-						display block
-						font-family 'Sofia Pro', sans-serif
-						font-style normal
-						font-weight 400
-						font-size 16px
-						margin-bottom 20px
-					&:hover,
-					&:focus,
-					&:active
-						opacity .75
+			a
+				display block
+				font-family 'Sofia Pro', sans-serif
+				font-style normal
+				font-weight 400
+				font-size 16px
+				margin-bottom 20px
+			&:hover,
+			&:focus,
+			&:active
+				opacity .75
 
 .icon-cat-1
 	&::before
@@ -212,39 +248,7 @@ header
 		height 18px
 		background-size 100% 100%
 
-.icon-search
-	background url('img/icon-search.svg') no-repeat left top
-
-.icon-basket
-	background: url('img/icon-basket.svg') no-repeat left top
-
-.icon-cabinet
-	background url('img/icon-cabinet.svg') no-repeat left top
-
-
-.icon-burger
-	width topIconsSize
-	height topIconsSize
-	position relative
-	&::after
-		content ''
-		width topIconsSize
-		height 2px
-		background-color blackColor
-		position absolute
-		top 3px
-		left 0
-		box-shadow 0 10px 0 0 blackColor, 0 19px 0 0 blackColor
-
-.logo
-		display block
-		background url('img/logo.svg') no-repeat left top
-		background-size 100% 100%
-		width 85px
-		height 40px
-
-
-// Header end
+// Category end
 
 // Content start
 
@@ -295,9 +299,12 @@ header
 	.vertical
 		flex-direction row
 		gap 0 10px
-		img
+		width 100%
+		height auto
+		.content__posts-item
 			min-width 145px
-			min-height 213px
+			width 50%
+			height auto
 
 // Content end
 
@@ -345,3 +352,58 @@ form.search-form
 	left 0
 
 // Search form end
+
+// Media start
+
+@media tablet
+	.wrapper
+		margin 51px 56px
+
+	header
+		margin-bottom 46px
+
+	.icon-burger
+		display none
+	
+	.icon-burger-close
+		display none
+
+	.content__wrapper
+		display flex
+		justify-content center
+
+	.content
+		max-width 539px
+		gap 20px 0
+		.horizontal
+			gap 20px 0
+		.vertical
+			gap 0 20px
+	
+	.explore
+		display block
+		position -webkit-sticky /* Safari */ 
+		position sticky
+		top 20px
+		z-index 0
+		min-width 150px
+		box-shadow none
+		margin-right 29px
+		padding 0
+		height 100vh
+		h2
+			margin 20px 0
+		nav
+			display flex
+			flex-direction column
+			justify-content space-between
+			margin 0
+			height 100vh - 13px
+			ul
+				padding 0
+
+
+
+
+
+// Media end
