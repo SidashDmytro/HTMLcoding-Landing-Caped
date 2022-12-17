@@ -45,6 +45,7 @@ body
 
 .wrapper
 	margin 15px 10px
+	max-width 1024px
 
 a
 	color inherit
@@ -254,57 +255,48 @@ header
 
 .content
 	display flex
-	flex-direction column
-	gap 10px 0
+	flex-wrap wrap
+	justify-content center
+	gap 10px
 	margin-bottom 25px
-	&__posts
-		display flex
-		width 100%
-		justify-content space-between
-		&-item
-			position relative
-			a
-				img
-					width 100%
-					height auto
-					border-radius 10px
-					&:hover
-						opacity .75
-			.heart
-				position absolute
-				display flex
-				justify-content center
-				align-items center
-				background #FFF
-				top 10px
-				right 10px
-				width 38px
-				height 38px
-				border-radius 50%
-				z-index 2
-				&:before
-					content '♡'
+	&__post
+		position relative
+		width calc(50% - 5px)
+		a
+			img
+				width 100%
+				height auto
+				border-radius 10px
 				&:hover
-					&:before
-						content '❤️'
-				&-active
-					&:before
-						content '❤️'
-	.horizontal
+					opacity .75
+		.heart
+			position absolute
+			display flex
+			justify-content center
+			align-items center
+			background #FFF
+			top 10px
+			right 10px
+			width 38px
+			height 38px
+			border-radius 50%
+			z-index 2
+			&:before
+				content '♡'
+			&:hover
+				&:before
+					content '❤️'
+			&-active
+				&:before
+					content '❤️'
+	&__block
+		display flex
+		justify-content center
 		flex-direction column
-		gap 10px 0
-		img
-			min-width 300px
-			min-height 100px
-	.vertical
-		flex-direction row
-		gap 0 10px
-		width 100%
-		height auto
-		.content__posts-item
-			min-width 145px
-			width 50%
-			height auto
+		gap 10px
+		.horizontal
+			width 100%
+
 
 // Content end
 
@@ -360,7 +352,7 @@ form.search-form
 		margin 51px 56px
 
 	header
-		margin-bottom 46px
+		margin-bottom 30px
 
 	.icon-burger
 		display none
@@ -374,11 +366,6 @@ form.search-form
 
 	.content
 		max-width 539px
-		gap 20px 0
-		.horizontal
-			gap 20px 0
-		.vertical
-			gap 0 20px
 	
 	.explore
 		display block
@@ -401,6 +388,24 @@ form.search-form
 			height 100vh - 13px
 			ul
 				padding 0
+
+@media desktop
+	body
+		display flex
+	header
+		height 44px
+	.wrapper
+		left 50%
+		margin 51px auto
+	.content
+		min-width 820px
+		gap 20px
+		&__post
+			width calc(33% - 10px)
+		&__block
+			width calc (67% - 10px)
+			gap 20px
+
 
 
 
